@@ -1,0 +1,41 @@
+div, h1 {
+    text-align: left;
+    width: 65%;
+    margin: 0px auto;
+}
+
+dl {
+    line-height: 20px;
+}
+
+html {
+    font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
+    background-image: url("image/bg.jpg");
+    background-attachment: fixed;
+}
+
+div.message {
+    border-style: solid;
+    border-width: 0px;
+    padding: 25px;
+    box-shadow: 4px 4px 12px 4px rgba(40, 40, 61, 0.5);
+    width: 30%;
+    margin: 0px auto;
+}
+
+img#p01{
+    width:300px; 
+    border-radius: 30px;
+    float:left; 
+    padding: 15px;
+}
+
+img#p02 {
+    width: 90%;
+}
+
+hr{
+    width: 65%;
+}
+
+
