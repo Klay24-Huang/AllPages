@@ -1,0 +1,14 @@
+
+div {
+  padding: 10px;
+  border: 2px red solid;
+  width:100px;height:100px;
+}
+
+#divYellow {
+    border: 2px solid yellow;
+}
+
+.red {
+    border: 2px solid blue;
+}
