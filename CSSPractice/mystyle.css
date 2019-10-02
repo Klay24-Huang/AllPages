@@ -1,0 +1,121 @@
+.lab1 p {
+    font-size: 20px;
+    line-height: 1.5em;
+    text-align: justify;
+  }
+ 
+  .lab1 p#change {
+      line-height: 2.5em;
+  }
+ 
+  .lab1 a:link {
+    text-decoration: none;
+  }
+ 
+  .lab1 a:visited {
+    color: gray;
+  }
+ 
+  .lab1 a:hover {
+    color: red;
+    text-decoration: underline;
+  }
+ 
+  .lab1 a:active {
+    color: red;
+  }
+
+/* lab2----------------------------------------------------------------- */
+ 
+ .lab2 ul#item1 li {
+  float:left; 
+  margin-left:60px;
+  list-style-image: url("https://img.icons8.com/color/48/000000/year-of-pig.png");
+}
+ 
+.lab2 ul#item2 {
+  list-style-image: url("https://img.icons8.com/cotton/64/000000/hacking.png");
+  margin-left:60px;
+}
+
+/* lab3----------------------------------------------------------------- */
+
+.lab3 div {
+  border: 1px red solid;
+}
+
+.lab3 #div2 {
+  border-width: 3px;
+  border-color: blue;
+  border-style: dotted;
+
+  border-left: 1px;
+  border-left: 2px dotted;
+  border-left: medium dashed green;
+
+  border-right-color: black;
+  border-top-color: coral; 
+}
+
+/* lab4----------------------------------------------------------------- */
+.lab4 div {
+  border: 1px red solid;
+}
+
+.lab4 #div2 {
+  border-width: 3px;
+  border-color: blue;
+  border-style: dotted;
+
+  border-left: 1px;
+  border-left: 2px dotted;
+  border-left: medium dashed green;
+
+  border-right-color: black;
+  border-top-color: coral; 
+  border-radius: 5px 10px 18px 20px;
+}
+/* lab5----------------------------------------------------------------- */
+.lab5 {
+  width: 65%;
+  margin: 0px auto;
+}
+
+.lab5 img {
+  float: right;
+  margin-left: 20px;
+  border-radius: 15px
+}
+
+.lab5 p {
+  text-align: justify;
+}
+/* lab6----------------------------------------------------------------- */
+
+.lab6 p{
+  width:300px;
+  height:300px; 
+  overflow: scroll;
+  font-size: 20px;
+  line-height: 1.3em;
+}
+/* lab7----------------------------------------------------------------- */
+
+.lab7 {
+  background-color:orangered; 
+  width: 100%;
+  height: 150px;
+}
+
+.lab7 span {
+  font-size: 40px;
+  color: whitesmoke;
+  position: relative;
+  top:30px;
+  left: 150px;
+}
+
+.lab7 input {
+  height:30px; 
+  width:250px;
+}
