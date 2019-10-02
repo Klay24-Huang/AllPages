@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <title>OOXX</title>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td id="box1" onclick="Click(document.getElementById('box1'))"></td>
+            <td id="box2" onclick="Click(document.getElementById('box2'))"></td>
+            <td id="box3" onclick="Click(document.getElementById('box3'))"></td>
+        </tr>
+        <tr>
+            <td id="box4" onclick="Click(document.getElementById('box4'))"></td>
+            <td id="box5" onclick="Click(document.getElementById('box5'))"></td>
+            <td id="box6" onclick="Click(document.getElementById('box6'))"></td>
+        </tr>
+        <tr>
+            <td id="box7" onclick="Click(document.getElementById('box7'))"></td>
+            <td id="box8" onclick="Click(document.getElementById('box8'))"></td>
+            <td id="box9" onclick="Click(document.getElementById('box9'))"></td>
+        </tr>
+    </table>
+
+    <script>
+        var count = 0;
+        function Click(obj) {
+            if (obj.innerText != 'X' && obj.innerText != 'O') {
+                count++;
+                obj.innerText = OorX();
+                Check();
+            }
+        }
+
+        function OorX() {
+            if (count % 2 == 0) {
+                return 'O';
+            }
+            else {
+                return 'X';
+            }
+        }
+
+        function Check(){
+            if (box5.innerText )
+            {
+                //alert (box1.innerText + ' Win!')
+            }
+        }
+        //(box3 && box4 && box5)(box4 && box5 && box6)(box1 && box5 && box9)(box3 && box5 && box7)
+
+    </script>   
+</body>
+
+</html>
