@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+html {
+    font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
+}
+
+pre#status {
+    text-align: left;
+}
