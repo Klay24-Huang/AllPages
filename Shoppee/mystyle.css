@@ -109,6 +109,7 @@ div > img {
   font-size: 30px;
 }
 
-.grid2 ~ img{
-  width: 300px;
+.grid2  img {
+  width: 10.67vw;
+  border-radius: 0%;
 }
