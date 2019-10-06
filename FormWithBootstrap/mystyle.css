@@ -1,0 +1,21 @@
+body {
+    font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
+}
+
+.card {
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.card-head{
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+}
+
+
+.card-body{
+    height: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
