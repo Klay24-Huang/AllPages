@@ -9,6 +9,11 @@ a {
     text-decoration: none;
 }
 
+nav.the-top {
+    border-bottom: 1px solid #dfdfdf;
+    background-color: white;
+}
+
 
 
 .my-title {
@@ -28,5 +33,11 @@ a {
         color: white;
         border-radius: 5px;
     }
+}
 
+.join {
+    background-color:#6f6dfd; 
+    border-color:#6f6dfd; 
+    width: 100%;
+    color: white;
 }
