@@ -1,0 +1,17 @@
+
+.my-form .card {
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.my-form .card-head{
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+}
+
+
+.my-form .card-body{
+    height: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;

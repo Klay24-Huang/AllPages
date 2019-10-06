@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="mystyle.css">
     <title>BMI</title>
 </head>
-<body>
-    <form action="" method="dialog">
-        身高：<input id="height" type="text" ><br>
-        體重：<input id="weight" type="text" ><br>
-        <p>BMI：</p>
-        <p id="result"></p>
-        <button id="calculate" >計算</button>
-    </form>
 
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="dialog">
+                    <div >身高：<input id="height" type="text"></div>
+                    <div class="test">體重：<input id="weight" type="text"></div>
+                    <p>BMI：</p>
+                    <p id="result"></p>
+                    <button id="calculate" class="btn btn-primary">計算</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>

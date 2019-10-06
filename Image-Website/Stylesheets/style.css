@@ -576,5 +576,156 @@ nav {
   padding: 6px 12px;
   font-size: 16px;
   border: 1px solid #ced4da;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.page-footer {
+  padding: 48px 0 20px;
+  background-color: #3d4143;
+  text-align: center;
+  color: #cfcfcf;
+}
+
+.page-footer ul {
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page-footer a {
+  color: white;
+  display: block;
+  padding: 8px;
+}
+
+.foot-menu {
+  margin-bottom: 20px;
+}
+
+.footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px;
+}
+
+.footer-logo {
+  text-align: left;
+  font-size: 20px;
+}
+
+.footer-logo a:hover {
+  color: #ffffff;
+}
+
+.menu-btn {
+  padding: 4px 12px;
+  font: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+  color: #838383;
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    max-width: 940px;
+  }
+  .story {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 830px;
+  }
+  .story-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .story {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .container {
+    max-width: 600px;
+  }
+  .items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .item {
+    width: 90%;
+    margin: 10px;
+  }
+  .signup-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 90%;
+  }
+  .header-menu {
+    display: block;
+    position: absolute;
+    background: #ffffff;
+    left: 0;
+    top: 100%;
+    width: 100;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 8px 0;
+  }
+  .header-menu li {
+    padding: 0 20px;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .banner {
+    padding-top: 80px;
+  }
+  .footer-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footer-content ul {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    width: 100%;
+  }
+  .story-img {
+    margin: 0px auto;
+    width: 90%;
+  }
+  .sign-form {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
