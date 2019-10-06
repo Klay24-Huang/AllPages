@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-Hant_TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build School</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Stylesheets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            if ($(".menu-btn").is(":visible")) {
+                $(".header-menu").hide();
+                $("menu-btn").on("click", function () {
+                    $(".header-menu").toggle();
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="coontainer">
+        <!-- nav bar -->
+        <header>
+            <nav class="navbar navbar-expand-sm sticky-top">
+                <a href="#" class="navbar-brand">Bulid School</a>
+                <div class="menu">
+                    <ul class="navbar-nav">
+                        <!-- <button class="menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button> -->
+                        <li class="nav-item">
+                            <a href="#">Intro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Signup</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- title -->
+        <div class="row justify-content-center">
+            <div class="col-sm-10 my-title ">
+                <div class="">
+                    <h2>Bulid School 是軟體開發教育的先鋒為學生打造更有競爭力的職涯!</h2>
+                </div>
+                <div>
+                    <h4>START CODING AND GET COACHED FORM MENTORS.</h4>
+                </div>
+                <div>
+                    <p>
+                        <a href="" class="signup-a btn">
+                            Apply Now
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- center -->
+        <div class="content">
+            <div class="row justify-content-center">
+                <h3>這裡沒有考試，只有滿滿的程式碼</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="item-body">
+                        <h4>Frondend</h4>
+                        <h3>HtML, CSS, and JS framework.</h3>
+                    </div>
+                    <div class="item-footer">
+                        <a href="#">More Information</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="item-body">
+                        <h4>Frondend</h4>
+                        <h3>HtML, CSS, and JS framework.</h3>
+                    </div>
+                    <div class="item-footer">
+                        <a href="#">More Information</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="item-body">
+                        <h4>Frondend</h4>
+                        <h3>HtML, CSS, and JS framework.</h3>
+                    </div>
+                    <div class="item-footer">
+                        <a href="#">More Information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="story row justify-content-center">
+            <div class="story-img col-md-4">
+                <img class="img-responsive center-block" src="http://fakeimg.pl/450x300" alt="img">
+            </div>
+            <div class="story-text col-sm-6">
+                <h3>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                    been
+                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley
+                    of type and scrambled it to make a type specimen book. It has survived not only five
+                    centuries,
+                    but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                    passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including versions
+                    of
+                    Lorem Ipsum.
+                </h3>
+                <p>
+                    squam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <section class="join ">
+                <div class="container">
+                    <div class="signup-content">
+                        <h2>立刻加入</h2>
+                        <p>welcome</p>
+                        <div class="sign-form">
+                            <div>
+                                <div class="input-div">
+                                    <span><i class="fa fa-envelope"></i></span>
+                                    <input type="text" name="" id="" placeholder="Enter your email address">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-div">
+                                    <span><i class="fa fa-lock"></i></span>
+                                    <input type="text" name="" id="" placeholder="Create your password">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-div">
+                                    <span><i class="fa fa-phone"></i></span>
+                                    <input type="text" name="" id="" placeholder="Enter mobile number">
+                                </div>
+                            </div>
+                            <p>
+                                "There is no one who loves pain itself, who seeks after it and wants to have it, simply
+                                because
+                                it is pain..."
+                            </p>
+                            <a href="" class="btn">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <footer class="page-footer">
+            <div class="foot-menu">
+                <nav class="navbar navbar-expand-sm bg-dark  navbar-dark">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#">Service</a></li>
+                        <li class="nav-item"><a href="#">About</a></li>
+                        <li class="nav-item"><a href="#">Pricing</a></li>
+                        <li class="nav-item"><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <nav class="navbar navbar-expand-sm bg-dark  navbar-dark">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#">Build school</a></li>
+                        <li class="nav-item"><a href="#">Pricing</a></li>
+                        <li class="nav-item"><a href="#">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
