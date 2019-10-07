@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="mystyle.css">
+
+
+
+
+    <title>Form +Bootstrap</title>
+</head>
+
+<body>
+    <form name="Form1" id="Form1"
+        action="http://isbaas.azurewebsites.net/WebForms/Form2Mail.aspx?mailto=wkus@gmail.com&redirect=http://www.google.com"
+        method="POST">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head bg-primary text-white">
+                            個人資料--<em>必填</em>
+                        </div>
+                        <div class="card-body">
+                            姓名：<input class="form-control" type="text" id="form-name" name="form-name" placeholder="請輸入姓名">
+                            密碼：<input class="form-control" type="text" id="passwd" name=" passwd" placeholder="請輸入密碼">  
+                            性別：
+                            <input type="radio" id="gender" name=" gender" value="male">男生
+                            <input type="radio" id="gender" name=" gender" value="female">女生<br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head bg-primary text-white">
+                            個人資料--<em>興趣</em>
+                        </div>
+                        <div class="card-body">
+                            興趣：
+                            <input type="checkbox" id="hobby" name=" hobby" value="music">音樂
+                            <input type="checkbox" id="hobby" name=" hobby" value="reading">閱讀
+                            <input type="checkbox" id="hobby" name=" hobby" value="sport">運動
+                            <input type="checkbox" id="hobby" name=" hobby" value="movie">電影<br>
+                            專長：
+                            <textarea id="fieldMultiLineText" cols="40" rows="5" value="fieldMultiLineText"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-head bg-primary text-white">
+                            個人資料--<em>地址</em>
+                        </div>
+                        <div class="card-body">
+                            郵遞區號：<input type="text" id="postal" name=" postal" value="postal"><br><br>
+                            縣市：<select name="city">
+                                <option value="1">台北</option>
+                                <option value="2">台南</option>
+                                <option value="3" selected>高雄</option>
+                            </select><br><br>
+                            其他地址：<input type="text" id="address" name=" address">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <input type="checkbox" id="ischeck" name="ischeck" value="ischeck"> 同意傳送個人資料
+            <br><br>
+            <input class="btn btn-primary" type="submit" id="form-submit">
+            <input class="btn btn-primary" type="reset" id="form-clear">
+        </div>
+    </form>
+    <script src="myscript.js"></script>
+
+</body>
+
+</html>
