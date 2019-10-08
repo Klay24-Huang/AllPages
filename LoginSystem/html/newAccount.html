@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <title>登入系統</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card">
+                    <h4 class="card-head bg-primary text-white">用戶註冊</h4>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <div>帳號<input class="form-control" type="text" id="form-account" name="form-account">
+                            </div>
+                            <div>密碼<input class="form-control" type="text" id="form-password" name="form-password">
+                            </div>
+                            <div>確認密碼<input class="form-control" type="text" id="form-confirm-password"
+                                    name="form-confirm-password"></div>
+                            <div>email<input class="form-control" type="text" id="form-password" name="form-password">
+                            </div>
+                            <div>生日<input class="form-control" type="text" id="form-password" name="form-password">
+                            </div>
+                            <div>學校/公司<input class="form-control" type="text" id="form-password" name="form-password">
+                            </div>
+                            <div><input type="checkbox" class="ischeck" id="ischeck" name="ischeck" value="ischeck">
+                                勾選我同意使用本系統
+                                <a href="">使用條款</a></div>
+                            <a href="javascript:void(0)" class="btn btn-primary" name="my-btn" id="my-btn">註冊</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">警告</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div id="modal-body" class="modal-body"></div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
