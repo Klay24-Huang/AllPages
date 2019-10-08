@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="sellhouse_style/style.css">
+    <title>信義房屋</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">買屋</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">賣屋</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">社區</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">成交行情</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">房訊知識</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">租屋</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">居家生活</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">門市據點</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">人才招募</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">企業社會責任</a>
+                </li>
+            </ul>
+
+            <span class="navbar-text">會員專區</span>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signupModal">登入/註冊</a>
+                        <a class="dropdown-item" href="#">網路客服</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron jumbotron-fluid mb-0"
+        style="background: url('images/bg-header.jpg'); background-size:cover;">
+        <div class="container">
+            <h1 class="text-center text-white mb-5" style="text-shadow:rgba(0,0,0,.8) 0 0 8px;">
+                <span class="mr-4 d-inline-block">為了家</span>
+                <span class="d-inline-block">還可以更好</span>
+            </h1>
+            <div class="card" style="opacity:0.9;">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">中古案</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">新建案</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">海外置產</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary dropdown-toggle " type="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">進階篩選</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">縣市</a>
+                                <a class="dropdown-item" href="#">行政區</a>
+                                <a class="dropdown-item" href="#">總價</a>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary ml-2">搜尋</a>
+                    </div>
+                    <small class="form-text text-muted">請輸入路街、社區、關鍵字或物件編號</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="jumbotron jumbotron-fluid mb-0" style="background: url('images/bg-map.png'); background-size:cover;">
+        <div class="container">
+            <h2 class="text-center mb-4 h3">海外置產說明會</h2>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <img class="w-100 mb-4" src="images/img-japan.jpg" alt="日本購屋說明會">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <img class="w-100 mb-4" src="images/img-malaysia.jpg" alt="馬來西亞購屋說明會">
+                </div>
+            </div>
+
+            <h2 class="text-center mb-4 mt-5 h3">精選優質好宅</h2>
+            <div class="card-deck">
+                <a class="card" href="#">
+                    <img src="images/img-selected-1.jpg" class="card-img-top" alt="...">
+                    <div class="card-header" style="background:#40C2A0;">
+                        <h5 class="text-white mb-0">低總價宅</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-dark">精選各區域低總價物件，近捷運、學校、公園等，讓你找到滿意的低價好宅，把握好房趁現在!...</p>
+                    </div>
+                </a>
+                <a class="card" href="#">
+                    <img src="images/img-selected-2.jpg" class="card-img-top" alt="...">
+                    <div class="card-header" style="background:#60AEDD;">
+                        <h5 class="text-white mb-0">信義APP</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-dark">信義房屋APP「即時聊、即時推、即時查」讓你找屋省心力，購售需求一次滿足，關於家，找信義聊聊</p>
+                    </div>
+                </a>
+                <a class="card" href="#">
+                    <img src="images/img-selected-3.jpg" class="card-img-top" alt="...">
+                    <div class="card-header" style="background:#FF9275;">
+                        <h5 class="text-white mb-0">商辦精選</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-dark">如何區分辦公大樓等級?常見可分為A、B、C級大樓，幾個重要指標讓你快速了解！</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="ad-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/img-carousel-1.jpg" class="d-block w-100" alt="ForPark">
+                <div class="text-white position-absolute" style="top: 15%; left: 20%;">
+                    <h1>ForPark</h1>
+                    <h3 class="d-none d-lg-block">一座公園, 創造幸福進行式</h3>
+                    <div class="d-none d-lg-block">秒到四號公園│得和路淳2房│樹海‧書香‧親子時光│</div>
+                    <div class="d-none d-lg-block">16‧24坪│02-2928-1688</div>
+                    <a href="#" class="btn btn-primary mt-3">了解詳情</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/img-carousel-2.jpg" class="d-block w-100" alt="誠果 禾樂">
+                <div class="text-white position-absolute" style="top: 15%; right: 20%;">
+                    <h1>誠果 禾樂</h1>
+                    <h3 class="d-none d-lg-block">豪宅規格 只需好宅價格</h3>
+                    <div class="d-none d-lg-block">板橋門牌，正對2座公園，用高品質打造物超所值的家！</div>
+                    <div class="d-none d-lg-block">幸福建築1-3房 2955-5555</div>
+                    <a href="#" class="btn btn-primary mt-3">了解詳情</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/img-carousel-3.jpg" class="d-block w-100" alt="永鼎富世居">
+                <div class="text-white position-absolute" style="top: 15%; right: 20%;">
+                    <h1>永鼎富世居</h1>
+                    <h3 class="d-none d-lg-block">1988萬起換4房</h3>
+                    <div class="d-none d-lg-block">頂埔捷運站50米∣出站即到家</div>
+                    <div class="d-none d-lg-block">27.6%超低公設∣2267-1808</div>
+                    <a href="#" class="btn btn-primary mt-3">了解詳情</a>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <h2 class="text-center mb-4 mt-5 h3">熱門頻道</h2>
+        <div class="card-deck">
+            <a class="card" href="#">
+                <div class="card-header" style="background:#029BA1;">
+                    <h5 class="text-white card-title text-center mb-0">成交行情</h5>
+                </div>
+                <img class="w-100" src="images/img-hot-1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-dark">一站涵蓋信義成交、實價登錄行情，提供即時且完整的房屋成交資訊與行情趨勢！</p>
+                </div>
+            </a>
+            <a class="card" href="#">
+                <div class="card-header" style="background:#F36A6F;">
+                    <h5 class="text-white card-title text-center mb-0">房訊知識</h5>
+                </div>
+                <img class="w-100" src="images/img-hot-2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-dark">最新房市新聞、不動產評論、專題報導、區域動態，豐富的買屋賣屋租屋與居家知識！</p>
+                </div>
+            </a>
+            <a class="card" href="#">
+                <div class="card-header" style="background:#C6A273;">
+                    <h5 class="text-white card-title text-center mb-0">居家生活</h5>
+                </div>
+                <img class="w-100" src="images/img-hot-3.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-dark">室內設計、裝潢、居家布置等生活資訊。家具、清潔、修繕訊息給您居家生活實用訊息。</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark mt-5 py-2">
+        <h3 class="d-inline-block text-white h6 mb-0 mr-3">信義消息</h3>
+        <ul class="list-unstyled d-inline-block mb-0 news-list">
+            <li class="d-inline-block mr-3"><a href="#" class="text-white">【台灣服務業唯一】榮獲「企業永續最高榮譽」</a></li>
+            <li class="d-inline-block mr-3"><a href="#" class="text-white">【信義房價指數】全台都會區季指數</a></li>
+            <li class="d-inline-block mr-3"><a href="#" class="text-white">【信義房價指數】大台北月指數</a></li>
+        </ul>
+    </div>
+
+    <div class="container-fluid py-3">
+        <div class="row">
+            <div class="col-6 col-md">
+                <h3 class="h5">信義房屋買屋</h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">條件搜尋</a>
+                    </li>
+                    <li>
+                        <a href="#">捷運搜尋</a>
+                    </li>
+                    <li>
+                        <a href="#">房屋特輯</a>
+                    </li>
+                    <li>
+                        <a href="#">門市據點</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h3 class="h5">信義成交行情</h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">成交行情搜尋</a>
+                    </li>
+                    <li>
+                        <a href="#">軌道經濟學</a>
+                    </li>
+                    <li>
+                        <a href="#">社區房價通</a>
+                    </li>
+                    <li>
+                        <a href="#">成交行情服務說明</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-7">
+                <div>
+                    <a href="#" class="mr-3 d-inline-block">信義代銷</a>
+                    <a href="#" class="mr-3 d-inline-block">信義開發</a>
+                    <a href="#" class="mr-3 d-inline-block">信義全球資產</a>
+                    <a href="#" class="mr-3 d-inline-block">信義鑑定</a>
+                    <a href="#" class="mr-3 d-inline-block">安信建經</a>
+                </div>
+                <div>
+                    <a href="#" class="mr-3 d-inline-block">日本信義</a>
+                    <a href="#" class="mr-3 d-inline-block">大馬信義</a>
+                    <a href="#" class="mr-3 d-inline-block">中國信義</a>
+                    <a href="#" class="mr-3 d-inline-block">信義置業</a>
+                </div>
+                <div>
+                    <a href="#" class="mr-3 d-inline-block">人才招募</a>
+                    <a href="#" class="mr-3 d-inline-block">了解信義</a>
+                </div>
+                <div>
+                    <a href="#" class="mr-3 d-inline-block">企業社會責任</a>
+                    <a href="#" class="mr-3 d-inline-block">信義公益基金會</a>
+                    <a href="#" class="mr-3 d-inline-block">信義學堂</a>
+                </div>
+                <div>
+                    <a href="#" class="mr-3 d-inline-block">投資人資訊</a>
+                    <a href="#" class="mr-3 d-inline-block">(Investor Relations)</a>
+                    <a href="#" class="mr-3 d-inline-block">利害關係人專區</a>
+                    <a href="#" class="mr-3 d-inline-block">金融機構專區</a>
+                </div>
+                <div>
+                    <a href="#" class="mr-3 d-inline-block">網站地圖</a>
+                    <a href="#" class="mr-3 d-inline-block">服務條款</a>
+                    <a href="#" class="mr-3 d-inline-block">保障隱私權聲明</a>
+                    <a href="#" class="mr-3 d-inline-block">相關網站</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#login"
+                                role="tab" aria-controls="pills-home" aria-selected="true">登入</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#signup"
+                                role="tab" aria-controls="pills-profile" aria-selected="false">註冊</a>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="請輸入 email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">密碼</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        placeholder="請輸入密碼">
+                                    <small class="form-text text-muted">6~30個英數字元，分大小寫</small>
+                                </div>
+                                <div class="mb-3">
+                                    <a href="#">忘記密碼</a>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block">登入</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="signup">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="email" class="form-control" id="InputEmail1"
+                                        aria-describedby="emailHelp" placeholder="請輸入 email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">密碼</label>
+                                    <input type="password" class="form-control" id="InputPassword" placeholder="請輸入密碼">
+                                    <small class="form-text text-muted">6~30個英數字元，分大小寫</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">再次輸入密碼</label>
+                                    <input type="password" class="form-control" id="InputPasswordenter"
+                                        aria-describedby="emailHelp" placeholder="請再次輸入密碼">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">姓名</label>
+                                    <input type="text" class="form-control" id="name" placeholder="請輸入姓名">
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">我已閱讀並同意信義房屋網站的
+                                        <a href="#">服務條款</a>與
+                                        <a href="#">隱私權聲明</a>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block">註冊</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

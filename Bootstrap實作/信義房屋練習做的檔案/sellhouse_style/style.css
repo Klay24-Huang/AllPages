@@ -1,0 +1,19 @@
+@charset "UTF-8";
+a.card:hover {
+  text-decoration: none;
+}
+
+.news-list li::before {
+  content: "・";
+  color: #fff;
+}
+
+@media screen and (max-width: 560px) {
+  #ad-carousel h1 {
+    font-size: 2rem;
+  }
+  #ad-carousel .btn {
+    margin-top: 0 !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

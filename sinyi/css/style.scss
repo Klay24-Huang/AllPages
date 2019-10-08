@@ -1,0 +1,23 @@
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.position-absolute {
+    top: 10vw;
+    left: 30vw;
+}
+
+@media screen and (max-width:560px){
+    div.ad-carousel{
+        font-size: 2rem;
+    }
+
+    button.ad-carousel{
+        margin-top:0 !important;
+    }
+}
