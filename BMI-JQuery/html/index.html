@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <title>GetDateTime</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script>
+        $(function () {
+            $('#Button1').click(Button1_Click);
+        });
+
+        function Show(msg) {
+            //請改成jQuery
+            // document.getElementById('Label1').innerHTML += msg + "<br />";
+                console.log(Show);
+                $('#Label1').html($('#Label1').html() + msg + "<br/>");
+            }
+        
+
+        var BmiObj = {
+            height: 0,
+            weight: 0,
+            GetBmi: function () {
+                let bmi = 0;
+                H = this.height / 100;
+                bmi = this.weight / (H * H);
+                return bmi;
+            }
+            /* ...補完其中的code... */
+
+        }
+
+        function Button1_Click() {
+            console.log('Button1_Click');
+            //請改成jQuery
+            // BmiObj.height = document.getElementById('txbHeight').value;
+            BmiObj.height = $('#txbHeight').val();
+            // BmiObj.weight = document.getElementById('txbWeight').value;
+            BmiObj.weight = $('#txbWeight').val();
+
+            console.log(BmiObj.height);
+            let bmi = BmiObj.GetBmi();
+            Show("BMI :" + bmi);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="row" style="margin: 10px">
+        <div class="col-6">
+            <label>身高:</label>
+            <input id="txbHeight" class="form-control" type="text" placeholder="輸入身高" />
+            <label>體重:</label>
+            <input id="txbWeight" class="form-control" type="text" placeholder="輸入體重" />
+
+            <label id="Label1">結果:</label><br />
+            <input class="btn btn-primary" type="button" id="Button1" value="計算" />
+        </div>
+    </div>
+</body>
+
+</html>
