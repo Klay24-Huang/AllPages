@@ -25,7 +25,6 @@
 
         function CheckAll() {
             $('#CheckAll').click(function (e) {
-                console.log($('#CheckAll').prop('checked'));
                 if ($('#CheckAll').prop('checked')) {
                     $('#CheckBoxGroup input').prop('checked', true)
                 } else {
@@ -37,7 +36,6 @@
         function ChangeImgBorder() {
             $('#sel01').change(function (e) {
                 var change = $('#sel01').val();
-                console.log(change);
                 $('#ImgGroup2 img').removeClass();
                 $('#ImgGroup2 img').addClass(change);
             });

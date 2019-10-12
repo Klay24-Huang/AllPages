@@ -8,10 +8,13 @@
                 text-align: center;
                 cursor: pointer;
             }
+
+            html {
+                font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
+            }
         </style>
 
         <script>
-           
             class OOXX {
                 constructor() {
                     this.dat = [];
@@ -19,30 +22,36 @@
                     this.dat[1] = ['', '', ''];
                     this.dat[2] = ['', '', ''];
                 }
-
                 setPoint(x, y, point) {
                     this.dat[x][y] = point;
                 }
-
                 HasWinner() {
                     /* 判斷勝利者 */
                     for (let x = 0; x <= 2; x++) {
                         //  row判斷
-                        if (this.dat[x][0] == this.dat[x][1] && this.dat[x][0] == this.dat[x][2]) {
+                        if (this.dat[x][0] == this.dat[x][1] && this.dat[x][0] == this.dat[x][2] && this.dat[x][
+                            0] != '') {
+                            console.log('row');
                             return this.dat[x][0];
                         }
                         // column判斷
-                        else if (this.dat[0][x] == this.dat[1][x] && this.dat[0][x] == this.dat[2][x]) {
+                        else if (this.dat[0][x] == this.dat[1][x] && this.dat[0][x] == this.dat[2][x] && this.dat[0]
+                            [x] != '') {
+                            console.log('columns');
                             return this.dat[0][x];
                         }
+                        if (this.dat[0][0] == this.dat[1][1] && this.dat[0][0] == this.dat[2][2] && this.dat[0][
+                            0] != '') {
+                            console.log('left slash');
+                            return this.dat[0][0];
+                        }
+                        if (this.dat[0][2] == this.dat[1][1] && this.dat[0][2] == this.dat[2][0] && this.dat[0][
+                            2] != '') {
+                            console.log('right slash');
+                            return this.dat[0][2];
+                        }
                     }
-
-                    if (this.dat[0][0] == this.dat[1][1] && this.dat[0][0] == this.dat[2][2]) {
-                        return this.dat[0][0];
-                    }
-                    if (this.dat[0][2] == this.dat[1][1] && this.dat[0][2] == this.dat[2][0]) {
-                        return this.dat[0][2];
-                    }
+                    return '';
                 }
             }
 
