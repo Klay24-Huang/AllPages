@@ -57,20 +57,20 @@
                 <li class="nav-item mr-auto">
                     <a class="nav-link" href="#">企業社會責任</a>
                 </li>
-
             </ul>
             <span class="navbar-text">會員專區</span>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">登入/註冊</a>
-                    <a class="dropdown-item" href="#">網路客服</a>
-                </div>
-            </li>
+            <ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">登入/註冊</a>
+                        <a class="dropdown-item" href="#">網路客服</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
     <header class="jumbotron jumbotron-fluid mb-0"
@@ -118,62 +118,66 @@
         </div>
     </header>
 
-    <div class="container">
-        <h2 class="text-center mb-4 h3">海外置產說明會</h2>
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <img class="w-100 mb-4" src="images/img-japan.jpg" alt="日本購屋說明會">
+    <div style="background: url('images/bg-map.png'); background-size: cover;">
+        <div class="container">
+            <h2 class="text-center mb-4 h3">海外置產說明會</h2>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <img class="w-100 mb-4" src="images/img-japan.jpg" alt="日本購屋說明會">
+                </div>
+                <div class="col-12 col-lg-6">
+                    <img class="w-100 mb-4" src="images/img-malaysia.jpg" alt="馬來西亞購屋說明會">
+                </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <img class="w-100 mb-4" src="images/img-malaysia.jpg" alt="馬來西亞購屋說明會">
+
+            <h2 class="text-center mb-4 h3">精選優質好宅</h2>
+            <div class="row justify-content-between">
+                <a href="#">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/img-selected-1.jpg"" class=" card-img-top" alt="sel01">
+                        <div class="card-header bg-success text-white">
+                            低總價宅
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/img-selected-2.jpg"" class=" card-img-top" alt="sel02">
+                        <div class="card-header bg-info text-white">
+                            消費APP
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/img-selected-3.jpg"" class=" card-img-top" alt="sel03">
+                        <div class="card-header bg-warning text-white">
+                            精選商辦
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text ">Some quick example text to build on the card title and make up the
+                                bulk of
+                                the
+                                card's content.</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <h2 class="text-center mb-4 h3">精選優質好宅</h2>
-        <div class="row justify-content-between">
-            <a href="#">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/img-selected-1.jpg"" class=" card-img-top" alt="sel01">
-                    <div class="card-header bg-success text-white">
-                        低總價宅
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/img-selected-2.jpg"" class=" card-img-top" alt="sel02">
-                    <div class="card-header bg-info text-white">
-                        消費APP
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/img-selected-3.jpg"" class=" card-img-top" alt="sel03">
-                    <div class="card-header bg-warning text-white">
-                        精選商辦
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text ">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
     <!-- carousel -->
     <div class="container-fluid">
         <div class="row">
@@ -224,10 +228,10 @@
             </a>
             <a href="#">
                 <div class="card" style="width: 18rem;">
-                    <img src="images/img-hot-2.jpg"" class=" card-img-top" alt="sel02">
                     <div class="card-header bg-info text-white">
                         消費APP
                     </div>
+                    <img src="images/img-hot-2.jpg"" class=" card-img-top" alt="sel02">
                     <div class="card-body">
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the
@@ -237,10 +241,10 @@
             </a>
             <a href="#">
                 <div class="card" style="width: 18rem;">
-                    <img src="images/img-hot-3.jpg"" class=" card-img-top" alt="sel03">
                     <div class="card-header bg-warning text-white">
                         精選商辦
                     </div>
+                    <img src="images/img-hot-3.jpg"" class=" card-img-top" alt="sel03">
                     <div class="card-body">
                         <p class="card-text ">Some quick example text to build on the card title and make up the bulk of
                             the
@@ -250,11 +254,69 @@
             </a>
         </div>
     </div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="collapse navbar-collapse list-unstyled d-inline-block" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto news-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">信義消息</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">【台灣服務業唯一】 榮獲「企業永續最高榮譽」</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">【信義房價指數】 榮獲 全台北都會區季指數</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">【信義房價指數】 大台北月指數</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 登入model -->
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Password">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">

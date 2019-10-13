@@ -1,0 +1,10 @@
+@font-face {
+  font-family: my-digit;
+  src: url("../font/SUBWT___.ttf");
+}
+
+.clock {
+  font-family: my-digit;
+  font-size: 30px;
+}
+/*# sourceMappingURL=style.css.map */
