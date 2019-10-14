@@ -1,6 +1,8 @@
 $(function () {
     // $('#btn-translate').click(DoTranslate);
     $('#btn-translate').click(DoTranslate);
+    // $('#translate').val('test');
+    $('#abc').text('test');
 });
 
 function DoTranslate() {
