@@ -1,27 +1,24 @@
- 
 $(function () {
-    // Select wrong element
-    // Error as #demo is the `div` element
-    dt = $('#table_id').dataTable({
+    dt = $('#table_id').DataTable({
         data: dat
     });
-
-    
-    RenewModal();
-    // $('#btn-add').click(function (e) {
-    //     DataTable.clear();
-    //     DataTable.rows.add(dat2);
-    //     DataTable.draw();
-    // });
-    // $('#btn-add').click(LoadData);
-
+    LoadData();
     $('#btn-ShowAddModal').click(function (e) {
-        $('.modal').modal();
+        $('#AddModal').modal();
     });
 
-    $('#btn-modal-add').click(ModalAddData);
-});
+    $('#btn-ShowImportModal').click(function (e) {
+        isImport = true;
+        ImportOrExport();
+    });
 
+    $('#btn-ShowExportModal').click(function (e) {
+        isImport = false;
+        ImportOrExport();
+    });
+
+});
+var isImport;
 var dat = [
     ["Sean", "1991/01/01", "3345678", "123@email", "台北市"],
     ["Sean", "1991/01/01", "3345678", "123@email", "台北市"],
@@ -67,7 +64,17 @@ function ModalAddData() {
         $('#modal-e-mail').val(),
         $('#modal-address').val(),
     ]
+
+    // clear data
+    $('#modal-name').val();
+    $('#modal-birthday').val();
+    $('#modal-phone').val();
+    $('#modal-e-mail').val();
+    $('#modal-address').val();
+
+
     dat.push(item);
+    SaveData();
     RenewModal();
 }
 
@@ -75,4 +82,32 @@ function RenewModal() {
     dt.clear();
     dt.rows.add(dat);
     dt.draw();
+}
+
+//載入資料
+function LoadData() {
+    if (localStorage.getItem('AddressBook') != null) {
+        var str = localStorage.getItem('AddressBook');
+        //取回資料
+        dat = JSON.parse(str);
+    }
+    //refresh data table
+    RenewModal();
+}
+
+//儲存資料
+function SaveData() {
+    var str = JSON.stringify(dat);
+    localStorage.setItem('AddressBook', str);
+}
+
+function ImportOrExport() {
+    if (isImport) {
+        $('#ButtonImport').attr('disabled', false);
+        $('#ModalOfImport').text('資料匯入');
+    } else {
+        $('#ButtonImport').attr('disabled', true);
+        $('#ModalOfImport').text('資料匯出');
+    }
+    $('#ModalDataExport').modal();
 }
