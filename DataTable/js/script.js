@@ -1,24 +1,32 @@
 $(function () {
+    // 初始化table
     dt = $('#table_id').DataTable({
         data: dat
     });
+    // 讀取local data
     LoadData();
+    //顯示新增modal
     $('#btn-ShowAddModal').click(function (e) {
         $('#AddModal').modal();
     });
-
+    //點擊匯入按鈕
     $('#btn-ShowImportModal').click(function (e) {
         isImport = true;
         ImportOrExport();
     });
-
+    //點擊匯出按鈕
     $('#btn-ShowExportModal').click(function (e) {
         isImport = false;
         ImportOrExport();
+        Export();
     });
+    //匯入資料
+    $('#ButtonImport').click(Import);
 
+    //新增資料
+    $('#btn-modal-add').click(ModalAddData);
 });
-var isImport;
+var isImport; //匯入匯出flag
 var dat = [
     ["Sean", "1991/01/01", "3345678", "123@email", "台北市"],
     ["Sean", "1991/01/01", "3345678", "123@email", "台北市"],
@@ -31,32 +39,8 @@ var dat = [
     ["Sean", "1991/01/01", "3345678", "123@email", "台北市"],
 ];
 
-var dat2 = [
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-    ['Amy', '1980/1/1', '0912345678', 'eric@gmail.com', '台北市光復南路179號13樓'],
-];
-
-
-
-// function LoadData() {
-//     console.log('LoadData');
-//     DataTable.clear();
-//     DataTable.rows.add(dat2);
-//     DataTable.draw();
-// }
-
 function ModalAddData() {
+    // console.log('ModalAddData');
     var item = [
         $('#modal-name').val(),
         $('#modal-birthday').val(),
@@ -64,15 +48,12 @@ function ModalAddData() {
         $('#modal-e-mail').val(),
         $('#modal-address').val(),
     ]
-
     // clear data
-    $('#modal-name').val();
-    $('#modal-birthday').val();
-    $('#modal-phone').val();
-    $('#modal-e-mail').val();
-    $('#modal-address').val();
-
-
+    $('#modal-name').val('');
+    $('#modal-birthday').val('');
+    $('#modal-phone').val('');
+    $('#modal-e-mail').val('');
+    $('#modal-address').val('');
     dat.push(item);
     SaveData();
     RenewModal();
@@ -101,8 +82,10 @@ function SaveData() {
     localStorage.setItem('AddressBook', str);
 }
 
+//控制匯入匯出modal版面
 function ImportOrExport() {
     if (isImport) {
+        $('#field_DataJSON').val('');
         $('#ButtonImport').attr('disabled', false);
         $('#ModalOfImport').text('資料匯入');
     } else {
@@ -110,4 +93,16 @@ function ImportOrExport() {
         $('#ModalOfImport').text('資料匯出');
     }
     $('#ModalDataExport').modal();
+}
+
+function Import() {
+    var str = $('#field_DataJSON').val();
+    dat = JSON.parse(str);
+    SaveData();
+    RenewModal();
+}
+
+function Export() {
+    var exportData = JSON.stringify(dat);
+    $('#field_DataJSON').val(exportData);
 }
