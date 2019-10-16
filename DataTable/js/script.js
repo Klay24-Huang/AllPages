@@ -30,6 +30,8 @@ $(function () {
     $('#btn-delete').click(ButtonDelete);
     //參考: https://datatables.net/examples/advanced_init/events_live.html
     $('#table_id tbody').on('click', 'tr', ButtonModified);
+    // 增加tags
+    $('.add-tags').tagsInput();
 });
 var isImport; //匯入匯出flag
 var dat = [
@@ -52,6 +54,7 @@ function ModalAddData() {
         $('#modal-phone').val(),
         $('#modal-e-mail').val(),
         $('#modal-address').val(),
+        $('#modal-category').val(),
     ]
     // clear data
     $('#modal-name').val('');
@@ -59,6 +62,8 @@ function ModalAddData() {
     $('#modal-phone').val('');
     $('#modal-e-mail').val('');
     $('#modal-address').val('');
+    $('#modal-category').importTags('');
+
     dat.push(item);
     SaveData();
     RenewModal();
@@ -134,7 +139,8 @@ function ButtonUpdate() {
         $('#EditField_Birthday').val(),
         $('#EditField_TEL').val(),
         $('#EditField_Email').val(),
-        $('#EditField_Address').val()
+        $('#EditField_Address').val(),
+        $('#EditField-category').val()
     ];
     //找出當前編輯的資料是哪一個元素
     var n = dat.indexOf(CurrentEditItem);
@@ -154,6 +160,7 @@ function ButtonModified() {
     $('#EditField_TEL').val(CurrentEditItem[2]);
     $('#EditField_Email').val(CurrentEditItem[3]);
     $('#EditField_Address').val(CurrentEditItem[4]);
+    $('#EditField-category').importTags(CurrentEditItem[5]);
     //顯示當前點選的資料
     $('#ModifiedModal').modal();
 }
