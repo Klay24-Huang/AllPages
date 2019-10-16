@@ -7,7 +7,7 @@ $(function () {
 
 function DoTranslate() {
     var source = $('#input').val();
-
+    console.log('DoTranslate');
     $.ajax({
         type: "post", //http verb
         headers: {
@@ -20,7 +20,7 @@ function DoTranslate() {
         dataType: "json",
         success: function (response) {
             //呼叫遠端服務後的回傳結果
-            $('#translate').val(response[0].translations[0].text);
+            $('#output').val(response[0].translations[0].text);
         }
     });
 }
