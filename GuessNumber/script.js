@@ -77,7 +77,8 @@ function listAdd() {
     //產生li 放目前猜測數字
     let newNode = document.createElement("li")
     //勝利text
-    let winText = ' 你贏了!!';
+    if(win) winText = ' 你贏了!!';
+
     //控制label的顏色
     labelColor = LabelColor();
     newNode.classList.add('list-group-item');
