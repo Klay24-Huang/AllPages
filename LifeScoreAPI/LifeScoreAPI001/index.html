@@ -37,7 +37,7 @@
             let arr = dateTime.split('');
             // get lifeNumber
             let lifeNum = LifeNumber(arr);
-            console.log(lifeNum);
+            ToAPI(lifeNum);
         }
 
         function LifeNumber(array) {
@@ -56,6 +56,15 @@
                 lifeNum = tenDigit + unitDigit;
             }
             return lifeNum;
+        }
+
+        function ToAJAX(lifeNum, ) {
+            $.ajax({
+                type: "Get",
+                url: `https://buildschoolnumerology.azurewebsites.net/api/Number/Numerology?constellation=${lifeNum}`,
+                dataType: "json",
+                success: 
+            });
         }
     </script>
 </head>
