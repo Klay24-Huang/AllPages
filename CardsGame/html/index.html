@@ -32,19 +32,19 @@
 
         .imgs {
             border-radius: 10%;
-            border: 10px solid red !important;
+            border: 10px solid cornflowerblue !important;
             box-sizing: border-box;
             box-shadow: red;
         }
 
         .clear {
             border-radius: 10%;
-            transition: all 1.5s;
+            transition: all 0.5s;
         }
     </style>
 
     <script>
-        var PlayCards = ['方塊3.png', 'Joker.png', '黑桃A.png', '紅心K.png', '方塊J.png', '梅花3.png'];
+        var PlayCards = ['方塊3.png', 'Joker.png', '梅花A.png', '紅心K.png', '方塊J.png', '梅花3.png'];
         var Cards = []; //所有牌
         var Card;
         var index = 0; //當前選擇的那個牌(在陣列中的index)
@@ -55,8 +55,10 @@
             for (let i = 0; i < Cards.length; i++) {
 
                 //設定圖片位置
-
+                let random = PlayCards[Math.floor(Math.random() * PlayCards.length)];
+                Cards[i].src = '../img/' + random;
                 //將圖片名稱設定為 data 屬性
+                Cards[i].data = random;
 
             }
         }
@@ -64,7 +66,7 @@
         function ButtonStart() {
             //把所有卡牌設為背面
             $('img').prop('src', '../img/back.png');
-            times = 100; //跑50次
+            times = 25; //跑50次
             Cards[index].className = "imgs";
             console.log('imgs');
             start();
@@ -77,11 +79,11 @@
             // console.log('imgs');
             //先清除狀態
             Cards[index].className = "clear";
-            console.log('clear');
+            // console.log('clear');
             //跑下一張
-            index ++;
-            times --;
-            console.log(times);
+            index++;
+            times--;
+            // console.log(times);
             //如果超過陣列範圍，則歸零
             //Cards.length == 16;
             //index 最大到15
@@ -90,16 +92,17 @@
             }
             //將下一張設為選取樣式
             Cards[index].className = "imgs";
-            console.log('imgs');
+            // console.log('imgs');
 
             if (times > 0) {
                 //倒數幾次的時候翻牌
-                SetupRandomCards();
                 //100毫秒後清空
                 setTimeout(start, 100);
             } else {
                 //如果times==0
                 //則表示當前index就是被選取(抽中)的那個
+                SetupRandomCards();
+                $('#result').html(Cards[index].data.replace(".png", ""));
 
             }
         }
@@ -115,13 +118,13 @@
                     Cards.push(Card);
                 }
             }
-            console.log(Cards);
+            // console.log(Cards);
 
             //Math.random() 取 0~1之間的亂數
             //Math.floor() 取最大整數
             //決定從哪個地方開始跑
             index = Math.floor(Math.random() * Cards.length);
-            console.log('index is ', index);
+            // console.log('index is ', index);
         });
     </script>
 </head>
