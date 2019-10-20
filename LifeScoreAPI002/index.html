@@ -39,13 +39,16 @@
   </style>
 
   <script>
+    var dt;
+    var lifeNum;
+
     $(function () {
       $('#btn').click(Analysis);
     });
 
     function Analysis() {
       // get time
-      let dt = $('#input').val();
+      dt = $('#input').val();
       let dateTime = new Date(dt);
       //月 0~11
       let month = dateTime.getMonth() + 1;
@@ -55,7 +58,7 @@
       //  covert to array
       let arr = dt.toString().split('');
       // get lifeNumber
-      let lifeNum = LifeNumber(arr);
+      lifeNum = LifeNumber(arr);
       // 取得星座
       let constellation = GetConstellation(month, date);
       // console.log(constellation);
@@ -84,10 +87,10 @@
     //取得星座
     function GetConstellation(month, date) {
       if (month == 1 && date >= 20 || month == 2 && date <= 18) {
-        return aquarius;
+        return 'aquarius';
       }
       if (month == 2 && date >= 19 || month == 3 && date <= 20) {
-        return pisces;
+        return 'pisces';
       }
       if (month == 3 && date >= 21 || month == 4 && date <= 19) {
         return 'aries';
@@ -137,6 +140,17 @@
     // 把回傳結果顯示到list上
     function AddList(respond) {
       console.log(respond);
+      let result = ` <li class="list-group-item">
+                  <div>
+                    <span class="label label-info">${dt}</span>
+                    <span>出生的你，星座是 <i>${respond.name}</i> </span>
+                  </div>
+                  <div>你的命靈數：</div>
+                  <div>
+                    ${lifeNum}. ${respond.lookup[lifeNum]}
+                  </div>
+                </li>`
+      $("ul").append(result);
     }
   </script>
 </head>
@@ -201,10 +215,17 @@
                   <a id="cheat" type="button" class="btn btn-default">看答案</a> -->
               </div>
               <br>
-              <ul id="guessResults" class="list-group">
+              <ul id="list" class="list-group">
+                <h2>生命靈數</h2>
+                <div class="input-group">
+                  <input id="input" type="date" name="" class="form-control" value="" required="required">
+                  <span class="input-group-btn">
+                    <a id="btn" type="button" class="btn btn-primary">分析</a>
+                  </span>
+                </div>
                 <!-- <li class="list-group-item">
-                    <span class="label label-danger">0A3B</span>
-                    <span class="badge">0A3B</span>
+                    <span class="label label-danger">0A3B1</span>
+                    <span class="badge">0A3B2</span>
                     3456
                   </li>
                   <li class="list-group-item">
@@ -212,15 +233,26 @@
                     <span class="badge">0A2B</span>
                     4567
                   </li> -->
+                <!-- <li class="list-group-item">
+                  <div>
+                    <span class="label label-info">${dt}</span>
+                    <span>出生的你，星座是 ${respond.name} </span>
+                  </div>
+                  <div>你的命靈數：</div>
+                  <div>
+                    ${靈數}. ${respond.lookup[靈數]}
+                  </div>
+                </li> -->
+
               </ul>
-              <h2>生命靈數</h2>
+              <!-- <h2>生命靈數</h2>
               <div class="input-group">
-                <!-- <span class="input-group-addon" id="sizing-addon1">猜答案</span> -->
+                <span class="input-group-addon" id="sizing-addon1">猜答案</span>
                 <input id="input" type="date" name="" class="form-control" value="" required="required">
                 <span class="input-group-btn">
                   <a id="btn" type="button" class="btn btn-primary">分析</a>
                 </span>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
