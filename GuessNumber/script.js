@@ -15,8 +15,8 @@ var A = 0;
 var B = 0;
 var user_guess; //儲存當前數字
 var win; //win flag
-//控制label的顏色
-var labelColor;
+var labelColor; //控制label的顏色
+var seeAnswer; //看答案flag
 
 function startGame() {
     console.log('startGame');
@@ -34,16 +34,22 @@ function startGame() {
 }
 
 function abortGame() {
+    $('#guessResults').html('');
     startGame();
 }
 
 function showAnswer() {
+    seeAnswer = true;
+    A = 0; 
+    B = 0;
     // console.log('showAnswer');
     var answerStr = '';
     for (let index = 0; index < problem.length; index++) {
         answerStr += problem[index];
     }
-    console.log(answerStr);
+    user_guess = answerStr; //把答案放到顯示變數
+    ListAdd();
+    // console.log(answerStr);
     // alert(answerStr);
 }
 
@@ -65,25 +71,33 @@ function doGuess() {
         }
     }
     CheckWin();
-    listAdd();
+    ListAdd();
     // console.log(guessArr);
     // console.log(problem);
     // console.log('A=' + A + ',B=' + B)
 }
 
-function listAdd() {
+function ListAdd() {
     //抓取unordered list
     let target = document.getElementById("guessResults");
     //產生li 放目前猜測數字
     let newNode = document.createElement("li")
     //勝利text
-    if(win) winText = ' 你贏了!!';
-
+    let winText;
+    if (win) {
+        winText = ' 你贏了!!';
+    } else if (seeAnswer) {
+        winText = ' 看答案';
+    }
+    else {
+        winText = '';
+    }
     //控制label的顏色
     labelColor = LabelColor();
     newNode.classList.add('list-group-item');
     newNode.innerHTML = `<span class="label label-${labelColor}">${A}A${B}B</span>  ${user_guess + winText}`;
     target.appendChild(newNode);
+
 }
 
 function CheckWin() {
@@ -94,7 +108,11 @@ function CheckWin() {
 
 function LabelColor() {
     if (win) {
+        win = false;
         return 'success';
+    } else if (seeAnswer) {
+        seeAnswer = false;
+        return 'info';
     } else {
         return 'danger';
     }
