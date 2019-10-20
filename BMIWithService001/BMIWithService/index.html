@@ -37,7 +37,7 @@
         function GetBmi( height, weight ) {
             $.ajax( {
                 type: "POST",
-                url: "/api/bmi2",
+                url: "/api/bmi",
                 data: {
                     "height": height,
                     "weight": weight
@@ -45,6 +45,7 @@
                 ,
                 dataType: "json",
                 success: function ( response ) {
+                    console.log( response );
                     $( '#Label1' ).html( response.BMI );
 
                 }
