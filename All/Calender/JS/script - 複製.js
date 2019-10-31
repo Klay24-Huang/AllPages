@@ -88,11 +88,12 @@ function CreateTable(dates) {
 //產生有日期的Td
 function CreateTd(trIndex) {
     //把要產生的td code存在一個string裡
-    // 給空值預防在html上加上undefined，雖然沒影響
+    // 給空值預防在html上加上為定義，雖然沒影響
     let CreateTdStr = '';
     //td的ID也等於日期
-    let tdId = DecideTdId(trIndex);
-    // 多出來td的天數, 最後一列30號以後的日期
+    //trIndex - 1，印為起始值是1
+    let tdId = 1 + (trIndex - 1) * 7;  // <=================================要修改
+    // 多出來td的天數
     let date = 1;
     //產生一號之前的td，只在第一列才執行
     if (trIndex == 1) {
@@ -119,30 +120,13 @@ function CreateBlankTd(day) {
     //把要產生的td code存在一個string裡
     let CreateTdStr;
     // 1號之前的td顯示的日期
-    let date = DecideLastMonthDate(month);
+    let date = 10;
     for (; day > 0; day--) {
         CreateTdStr += `<td class="text-muted">${date}</td>`;
-        date++;
+        date--;
     }
     // this.day = 0;
     return CreateTdStr;
-}
-
-function DecideTdId(trIndex) {
-      //trIndex - 1，因為起始值是1
-    if (trIndex == 1) {
-        return 1 + (trIndex - 1) * 7;
-    } else {
-        // 必須根據1號的星期幾縮排
-        return 1 + (trIndex - 1) * 7 - day;
-    }
-}
-
-function DecideLastMonthDate(month) {
-    //取得上個月有幾天
-    let forDates = new Date(year, month, 0);
-    //根據星期幾往回退
-    return forDates.getDate() - day + 1;
 }
 
 function Test() {
