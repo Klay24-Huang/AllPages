@@ -109,8 +109,8 @@ function ButtonFunction() {
 
 
 var obj = new Object();
-var countMove = 10; //隨機移動步數
-var objMove = 0//紀錄上次移動的物體的值
+var countMove = 15; //隨機移動步數
+var objMove = 0 //紀錄上次移動的物體的值
 
 function GetRandom() {
     let randomNum = 0;
