@@ -1,16 +1,28 @@
 var timeNow;
 var year;
 var month;
+var date; //幾號
 var dates; //這個月有幾天
 var day; //這個月一號是星期幾
+var ExDate; //多出來td的天數, 最後一天以後的日期
+var todayDate; //現在選擇的是幾號
+var currentYear; //現實時間的年
+var currentMonth; //現實時間的月
+var currentDate; //現實時間日期
 
 $(function () {
     GetTime();
+    TodayIs();
     RenewYAndM(year, month);
     CreateTable(dates);
-    $('button').click(Test);
     $('#prevMonth').click(SubtractMonth);
     $('#nextMonth').click(AddMonth);
+    RenewDetailDates(todayDate);
+    ChoseToday();
+    //顯示行事曆modal
+    $('.detail').click(ModalFunction);
+    $('#btn-add').click(RecordDetail);
+    // $('button').click(Test);
 })
 
 function GetTime() {
@@ -19,34 +31,46 @@ function GetTime() {
         timeNow = new Date();
         year = timeNow.getFullYear();
         month = timeNow.getMonth(); //回傳0~11
+        date = timeNow.getDate();
+        todayDate = date;
     }
     // 利用getDate多載，取得當月天數
     //懷疑使用這個方法時，輸入9 = 9月
     let forDates = new Date(year, month + 1, 0);
+    //這個月有幾天
     dates = forDates.getDate();
     let forDay = new Date(year, month, 1); // 0 ~ 11
+    //星期幾
     day = forDay.getDay();
-    // console.log(`dates is ${dates}, day is ${day}`)
+}
+
+// 把今天的年月日存到變數,不可修改
+function TodayIs() {
+    currentYear = year; //現實時間的年
+    currentMonth = month; //現實時間的月
+    currentDate = date; //現實時間日期
 }
 
 //點 向右按鈕
 function AddMonth() {
-    $('tbody').html('');
+    $('#calenderDisplay').html('');
     month++;
     CheckYear(month);
     GetTime();
     RenewYAndM(year, month);
     CreateTable(dates);
+    ChoseToday();
 }
 
 //點 向左按鈕
 function SubtractMonth() {
-    $('tbody').html('');
+    $('#calenderDisplay').html('');
     month--;
     CheckYear(month);
     GetTime();
     RenewYAndM(year, month);
     CreateTable(dates);
+    ChoseToday();
 }
 
 //確認年分
@@ -55,7 +79,7 @@ function CheckYear(month) {
         this.month = 0;
         year++;
     } else if (month < 0) {
-        this.month = 12;
+        this.month = 11;
         year--;
     }
 }
@@ -69,18 +93,12 @@ function RenewYAndM(year, month) {
 function CreateTable(dates) {
     let trIndex = 1;
     //dates = 這個月有幾天 = 要產生幾個td
-    while (dates > 0) {
-        $('tbody').append(
+    //產生六個tr
+    while (trIndex < 7) {
+        $('#calenderDisplay').append(
             `<tr id="tr${trIndex}"></tr>`
         );
         $(`#tr${trIndex}`).append(CreateTd(trIndex));
-        if (trIndex == 1) {
-            dates -= (7 - day);
-        } else {
-            // 產生七個td
-            dates -= 7;
-        }
-        // 進到下一個tr
         trIndex++;
     }
 }
@@ -92,9 +110,7 @@ function CreateTd(trIndex) {
     let CreateTdStr = '';
     //td的ID也等於日期
     let tdId = DecideTdId(trIndex);
-    // 多出來td的天數, 最後一列30號以後的日期
-    let date = 1;
-    //產生一號之前的td，只在第一列才執行
+    // //產生一號之前的td，只在第一列才執行
     if (trIndex == 1) {
         CreateTdStr = CreateBlankTd(day);
         var i = day; //下方迴圈的INDEX
@@ -103,11 +119,15 @@ function CreateTd(trIndex) {
     }
     //產生七個td
     for (; i < 7; i++) {
+        if (trIndex == 1) {
+            // 多出來td的天數, 最後一天以後的日期
+            ExDate = 1
+        }
         if (tdId > dates) {
-            CreateTdStr += `<td class="text-muted">${date}</td>`;
-            date++;
+            CreateTdStr += `<td class="text-muted">${ExDate}</td>`;
+            ExDate++;
         } else {
-            CreateTdStr += `<td id="td${tdId}">${tdId}</td>`;
+            CreateTdStr += `<td><div onclick="CalenderTdFunction(this)" id="td${tdId}">${tdId}</div></td>`;
             tdId++;
         }
     }
@@ -117,7 +137,7 @@ function CreateTd(trIndex) {
 //產生1號之前的空白td
 function CreateBlankTd(day) {
     //把要產生的td code存在一個string裡
-    let CreateTdStr;
+    let CreateTdStr = "";
     // 1號之前的td顯示的日期
     let date = DecideLastMonthDate(month);
     for (; day > 0; day--) {
@@ -129,9 +149,9 @@ function CreateBlankTd(day) {
 }
 
 function DecideTdId(trIndex) {
-      //trIndex - 1，因為起始值是1
+    //trIndex - 1，因為起始值是1
     if (trIndex == 1) {
-        return 1 + (trIndex - 1) * 7;
+        return 1;
     } else {
         // 必須根據1號的星期幾縮排
         return 1 + (trIndex - 1) * 7 - day;
@@ -145,6 +165,149 @@ function DecideLastMonthDate(month) {
     return forDates.getDate() - day + 1;
 }
 
-function Test() {
+function DecideDate(trIndex) {
+    if (trIndex == 1) {
+        return 1;
+    }
+}
 
+// 為今天加上標記
+function ChoseToday() {
+
+    if (month == currentMonth) {
+        //在日曆上加上今天的標記
+        $(`#td${currentDate}`).css("background-color", "#1967d2");
+        $(`#td${currentDate}`).css("color", "white");
+        $(`#td${currentDate}`).css("border-radius", "50%");
+        //在右方table加上今天的標記
+        if (todayDate == currentDate) {
+            //如果選擇的日期 == 今天的日期，加上class
+            $(`#${currentDate}`).addClass('choseDetailDate');
+        } else {
+            $(`#${todayDate}`).removeClass('choseDetailDate');
+        }
+    }
+}
+
+//刷新右方table上方的日期
+function RenewDetailDates(date) {
+    $(`#${currentDate}`).removeClass('choseDetailDate');
+    //取得傳入日期是星期幾
+    let day = new Date(year, month, date).getDay();
+    //週日開始的日期
+    let startDate = DecideDetailDates(day, date);
+    //取得這個月有幾天
+    let forThisMonthDates = new Date(year, month + 1, 0);
+    $('.DetailDates').each(function () {
+        $(this).text(startDate);
+        $(this).attr('id', startDate);
+        startDate++;
+        //如果超過這個月最後一天
+        if (startDate > forThisMonthDates.getDate()) {
+            startDate = 1;
+        }
+    });
+    SetDetailID(date);
+}
+
+//決定右方table開始的日期
+function DecideDetailDates(day, date) {
+    //傳入的日期扣掉星期幾
+    if (date - day > 0) {
+        return date - day;
+    } else {
+        return DecideLastMonthDate(month);
+    }
+}
+
+//點擊左方日曆
+function CalenderTdFunction(obj) {
+    todayDate = parseInt($(obj).text());
+    RenewDetailDates(todayDate);
+    ChoseToday();
+
+}
+
+//Modal相關
+function ModalFunction() {
+    date = $(this).attr('id');
+    //設定時間的格式，ex 2017-01-01， 0不可省略
+    let setMonth = (month) => {
+        if (month + 1 < 10) {
+            return '0' + (month + 1)
+        } else {
+            return month + 1
+        }
+    };
+    let setDate = (date) => {
+        if (date < 10) {
+            return '0' + date
+        } else {
+            return date
+        }
+    };
+    $('#time').val(`${year}-${setMonth(month)}-${setDate(date)}T12:00`);
+    $('#ModifiedModal').modal();
+}
+
+//右下方td設立ID, ID等於選擇的日期
+function SetDetailID(date) {
+    //取得傳入日期是星期幾
+    let day = new Date(year, month, date).getDay();
+    //週日開始的日期
+    let startDate = DecideDetailDates(day, date);
+    //取得這個月有幾天
+    let forThisMonthDates = new Date(year, month + 1, 0);
+    //給setRecorder用，進到下個月 month要+1
+    let recordMonth = month;
+    //把陣列清空
+    infoRecorder.length = 0;
+    $('.detail').each(function () {
+        $(this).attr('id', startDate);
+        SaveRecorder(year, recordMonth, startDate);
+        console.log(infoRecorder)
+        startDate++;
+        //如果超過這個月最後一天
+        if (startDate > forThisMonthDates.getDate()) {
+            startDate = 1;
+            recordMonth++;
+            // 從12月回到1月 12月=11 1月=0
+            if (recordMonth = 12) {
+                recordMonth = 0
+            }
+        }
+    });
+    console.log(infoRecorder); //
+}
+
+//給右方用的資料結構, 用來說明點到的td的年月日
+//constructor function
+function Information(year, month, date) {
+    this.year = year;
+    this.month = month;
+    this.date = date;
+}
+var infoRecorder = [];
+
+function SaveRecorder(year, month, date) {
+    let obj = new Information(year, month + 1, date);
+    infoRecorder.push(obj);
+}
+
+//用json紀錄行事曆事件
+var detailData = [];
+function RecordDetail() {
+    var item = [
+        $('#title').val(),
+        $('#time').val(),
+        $('#description').val()
+    ]
+    //清空
+    $('#title').val('');
+    $('#time').val('');
+    $('#description').val('');
+    detailData.push(item);
+    var convertToJson = JSON.stringify(detailData);
+    localStorage.setItem('detailBook', convertToJson);
+    console.log (convertToJson);
 }

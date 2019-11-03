@@ -13,61 +13,137 @@
     <style>
         body {
             font-family: '微軟正黑體', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: #A5A051;
+            /* background-color: #A5A051; */
         }
 
-        td {
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            /* 使td可以更改border-radius */
+        }
+
+        #calender td {
             /* 100/7 */
             width: 14.286%;
+            text-align: center;
+            padding: 0 10px;
         }
+
+        td div:hover {
+            color: #185abc;
+            background-color: #d2e3fc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
         th {
             text-align: center;
         }
 
-        #calender{
-            margin-top: 5%;
+        #calender {
+            margin-top: 40px;
+            font-size: 12px;
+        }
+
+        #detail td {
+            height: 400px;
+            border: #dadce0 1px solid;
+        }
+
+        .choseDetailDate {
+            background-color: #1967d2;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            margin: 0 auto;
         }
     </style>
 </head>
-<div class="container offset-3 col-6" id="calender">
+<div class="container-fluid">
     <div class="row">
-        <table class="table table-borderless">
-            <thead>
-                <tr>
-                    <th colspan="5" class="text-left" id="yearAndMonth"></th>
-                    <th><i class="fas fa-chevron-left ml-auto" id="prevMonth"></i></th>
-                    <th><i class="fas fa-chevron-right ml-2" id="nextMonth"></i></th>
-                </tr>
-                <tr>
-                    <th scope="col">日</th>
-                    <th scope="col">一</th>
-                    <th scope="col">二</th>
-                    <th scope="col">三</th>
-                    <th scope="col">四</th>
-                    <th scope="col">五</th>
-                    <th scope="col">六</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- <tr>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr> -->
-            </tbody>
-        </table>
+        <div class="col-3" id="calender">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th colspan="5" class="text-left" id="yearAndMonth"></th>
+                        <th><i class="fas fa-chevron-left ml-auto" id="prevMonth"></i></th>
+                        <th><i class="fas fa-chevron-right ml-2" id="nextMonth"></i></th>
+                    </tr>
+                    <tr>
+                        <th scope="col">日</th>
+                        <th scope="col">一</th>
+                        <th scope="col">二</th>
+                        <th scope="col">三</th>
+                        <th scope="col">四</th>
+                        <th scope="col">五</th>
+                        <th scope="col">六</th>
+                    </tr>
+                </thead>
+                <tbody id="calenderDisplay">
+                </tbody>
+            </table>
+            <div>顯示活動跟儲存功能還沒做</div>
+        </div>
+        <div class="col-9">
+            <table class="table table-borderless mt-3">
+                <thead>
+                    <tr>
+                        <th scope="col">周日<div class="DetailDates">1</div>
+                        </th>
+                        <th scope="col">周一<div class="DetailDates">2</div>
+                        </th>
+                        <th scope="col">周二<div class="DetailDates">3</div>
+                        </th>
+                        <th scope="col">周三<div class="DetailDates">4</div>
+                        </th>
+                        <th scope="col">周四<div class="DetailDates">5</div>
+                        </th>
+                        <th scope="col">周五<div class="DetailDates">6</div>
+                        </th>
+                        <th scope="col">周六<div class="DetailDates">7</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="detail">
+                        <td class="detail" style="border-radius: 15px 0 0 15px"></td>
+                        <td class="detail"></td>
+                        <td class="detail"></td>
+                        <td class="detail"></td>
+                        <td class="detail"></td>
+                        <td class="detail"></td>
+                        <td class="detail" style="border-radius: 0 15px 15px 0"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
     </div>
 </div>
 <button class="btn btn-primary">123</button>
+
+<!-- 修改或刪除 modal -->
+<div id="ModifiedModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <input type="text" class="form-control" id="title" placeholder="新增標題">
+                <input type="datetime-local" class="form-control mt-3" id="time" value="">
+                <input type="text" class="form-control mt-3" id="description" placeholder="新增說明">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btn-add" data-dismiss="modal">新增</button>
+                <button type="button" class="btn btn-danger" id="btn-delete" data-dismiss="modal">刪除</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <body>
 
     <!-- Optional JavaScript -->
@@ -85,7 +161,7 @@
     <script src="https://kit.fontawesome.com/72b9c7cd10.js" crossorigin="anonymous"></script>
     <!-- my js -->
     <script src="../JS/script.js"></script>
-    
+    <div class="test"></div>
 </body>
 
 </html>
