@@ -9,6 +9,8 @@ var todayDate; //現在選擇的是幾號
 var currentYear; //現實時間的年
 var currentMonth; //現實時間的月
 var currentDate; //現實時間日期
+var title;
+var time;
 
 $(function () {
     GetTime();
@@ -21,8 +23,12 @@ $(function () {
     ChoseToday();
     //顯示行事曆modal
     $('.detail').click(ModalFunction);
+    //點擊modal新增按鈕
     $('#btn-add').click(RecordDetail);
-    // $('button').click(Test);
+    LoadData();
+
+    //左方的td click方法 直接掛在html上
+    $('#123').click(Test);
 })
 
 function GetTime() {
@@ -230,7 +236,7 @@ function CalenderTdFunction(obj) {
 
 //Modal相關
 function ModalFunction() {
-    date = $(this).attr('id');
+    date = $(this).attr('id').replace('detail', '');
     //設定時間的格式，ex 2017-01-01， 0不可省略
     let setMonth = (month) => {
         if (month + 1 < 10) {
@@ -263,9 +269,8 @@ function SetDetailID(date) {
     //把陣列清空
     infoRecorder.length = 0;
     $('.detail').each(function () {
-        $(this).attr('id', startDate);
+        $(this).attr('id', `detail${startDate}`);
         SaveRecorder(year, recordMonth, startDate);
-        console.log(infoRecorder)
         startDate++;
         //如果超過這個月最後一天
         if (startDate > forThisMonthDates.getDate()) {
@@ -276,8 +281,9 @@ function SetDetailID(date) {
                 recordMonth = 0
             }
         }
+
     });
-    console.log(infoRecorder); //
+    // console.log(infoRecorder); 
 }
 
 //給右方用的資料結構, 用來說明點到的td的年月日
@@ -295,19 +301,77 @@ function SaveRecorder(year, month, date) {
 }
 
 //用json紀錄行事曆事件
+
 var detailData = [];
+
 function RecordDetail() {
-    var item = [
-        $('#title').val(),
-        $('#time').val(),
-        $('#description').val()
-    ]
+    let item = {
+        title: $('#title').val(),
+        time: $('#time').val(),
+        description: $('#description').val()
+    }
+    //為顯示的badge顯示活動名稱和時間
+    title = $('#title').val();
+    time = new Date($('#time').val()).getHours();
     //清空
     $('#title').val('');
     $('#time').val('');
     $('#description').val('');
+
     detailData.push(item);
-    var convertToJson = JSON.stringify(detailData);
+    SaveData(detailData);
     localStorage.setItem('detailBook', convertToJson);
-    console.log (convertToJson);
+    //在html上顯示新增
+    ModalAddDetail(date);
 }
+
+
+//讀取save data
+function SaveData(detailData) {
+    convertToJson = JSON.stringify(detailData);
+    localStorage.setItem('detailBook', convertToJson);
+}
+
+//讀取local data
+function LoadData() {
+    if (localStorage.getItem('detailBook') != null) {
+        let load = localStorage.getItem('detailBook');
+        load = JSON.parse(load);
+        load.forEach(element => {
+                let time = new Date(element.time);
+                let year = time.getFullYear();
+                let month = time.getMonth() + 1;
+                let date = time.getDate();
+                AddDetail(year, month, date, element);
+            });
+        }
+    }
+
+    function AddDetail(year, month, date, DataObj) {
+        infoRecorder.forEach(element => {
+            if (element.year == year && element.month == month &&
+                element.Date == date) {
+                let hour = new Date(DataObj.time).getHours();
+                let htmlStr = `<span class="badge badge-primary w-100 text-left">${element.title}<br>${hour}點</span>`;
+                //取得當前item的index
+                let element = infoRecorder.indexOf(element);
+                //ex 第一天是3號 index = 0, id = 3
+                // 第三天是5號 index = 2, id = 2+3
+                let id = index + element[0].date;
+                $(`#detail${id}`).append(htmlStr);
+            }
+        });
+    }
+
+    //在右下方table，增加活動的badge
+    function ModalAddDetail(id) {
+        let htmlStr = `<span class="badge badge-primary w-100 text-left">${title}<br>${time}點</span>`;
+        $(`#detail${id}`).append(htmlStr);
+    }
+
+    function Test() {
+        // let load = localStorage.getItem('detailBook');
+        // load = JSON.parse(load);
+        // console.log(infoRecorder);
+        localStorage.clear();
+    }

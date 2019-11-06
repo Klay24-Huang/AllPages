@@ -58,6 +58,18 @@
             margin: 0 auto;
         }
     </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151651631-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151651631-1');
+    </script>
 </head>
 <div class="container-fluid">
     <div class="row">
@@ -107,7 +119,9 @@
                 <tbody>
                     <tr id="detail">
                         <td class="detail" style="border-radius: 15px 0 0 15px"></td>
-                        <td class="detail"></td>
+                        <td class="detail">
+                            <span class="badge badge-primary w-100 text-left">test <br>123 </span>
+                        </td>
                         <td class="detail"></td>
                         <td class="detail"></td>
                         <td class="detail"></td>
@@ -120,7 +134,7 @@
         </div>
     </div>
 </div>
-<button class="btn btn-primary">123</button>
+<button class="btn btn-primary" id="123">123</button>
 
 <!-- 修改或刪除 modal -->
 <div id="ModifiedModal" class="modal" tabindex="-1" role="dialog">
