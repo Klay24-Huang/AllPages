@@ -46,7 +46,7 @@
         }
 
         #detail td {
-            height: 400px;
+            height: 90vh;
             border: #dadce0 1px solid;
         }
 
@@ -57,8 +57,13 @@
             width: 24px;
             margin: 0 auto;
         }
+
+        #detail td {
+            padding: 3px;
+        }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- 統計流量 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151651631-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -94,10 +99,21 @@
                 <tbody id="calenderDisplay">
                 </tbody>
             </table>
-            <div>顯示活動跟儲存功能還沒做</div>
+            <pre>
+操作說明:
+點左方小日曆切換時間
+點右方日期下方控革新曾活動
+
+待更新:
+1. 點badge可顯示細節和修正內容
+2. bug.儲存功能怪怪的,有時候會不見
+3. bug badge會隨項目增加越來越多
+            </pre>
         </div>
+
+        <!-- 右方細節 -->
         <div class="col-9">
-            <table class="table table-borderless mt-3">
+            <table class="table table-borderless mt-3" id="detail">
                 <thead>
                     <tr>
                         <th scope="col">周日<div class="DetailDates">1</div>
@@ -120,7 +136,7 @@
                     <tr id="detail">
                         <td class="detail" style="border-radius: 15px 0 0 15px"></td>
                         <td class="detail">
-                            <span class="badge badge-primary w-100 text-left">test <br>123 </span>
+                            <!-- <span class="badge badge-primary w-100 text-left">test <br>123 </span> -->
                         </td>
                         <td class="detail"></td>
                         <td class="detail"></td>
@@ -134,7 +150,7 @@
         </div>
     </div>
 </div>
-<button class="btn btn-primary" id="123">123</button>
+<button class="btn btn-primary" id="testButton">testButton</button>
 
 <!-- 修改或刪除 modal -->
 <div id="ModifiedModal" class="modal" tabindex="-1" role="dialog">
@@ -174,7 +190,12 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/72b9c7cd10.js" crossorigin="anonymous"></script>
     <!-- my js -->
-    <script src="../JS/script.js"></script>
+    <!-- 參數 -->
+    <script src="../JS/parameters.js"></script>
+    <!-- 左方日曆 -->
+    <script src="../JS/calender.js"></script>
+    <!-- 右方細節 -->
+    <script src="../JS/detailTable.js"></script>
     <div class="test"></div>
 </body>
 
