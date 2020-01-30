@@ -163,7 +163,7 @@ function AddDetail(year, month, date, DataObj) {
 
 //在右下方table，增加活動的badge
 function HtmlAddDetail(id) {
-    let htmlStr = `<span class="badge badge-primary w-100 text-left">${title}<br>${time}點</span>`;
+    let htmlStr = `<span class="badge badge-primary w-100 text-left mt-1">${title}<br>${time}點</span>`;
     $(`#detail${id}`).append(htmlStr);
 }
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <meta name="author" content="http://www.jb51.net/" />
+    <title>CSS如何实现弹出一个全屏灰黑色透明遮罩效果-</title>
+    <link rel="stylesheet" href="./Rocket-Loader-master/css/loader.min.css">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .mask {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            filter: alpha(opacity=50);
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: block;
+            z-index: 1000;
+        }
+
+        .loading {
+            width: 280px;
+            height: 180px;
+            position: absolute;
+            top: 500px;
+            left: 50%;
+            margin-left: -140px;
+            display: block;
+            z-index: 2000;
+        }
+    </style>
+    <!-- <script type="text/javascript">
+        window.onload = function () {
+            var zhezhao = document.getElementById("zhezhao");
+            var login = document.getElementById("login");
+            var bt = document.getElementById("bt");
+            var btclose = document.getElementById("btclose");
+
+            bt.onclick = function () {
+                zhezhao.style.display = "block";
+                login.style.display = "block";
+            }
+            btclose.onclick = function () {
+                zhezhao.style.display = "block";
+                login.style.display = "block";
+            }
+        }
+    </script> -->
+</head>
+
+<body>
+    <div class="mask"></div>
+    <div class="loading"></div>
+
+    <script src="./node_modules/rocket-tools/js/tools.min.js"></script>
+    <script src="./Rocket-Loader-master/js/loader.min.js"></script>
+    <script>
+        const myLoader = Rocket.loader({
+
+            // color of the loader
+            // aqua black blue green grey-blue grey-blue-dark orange pink purple red white yellow
+            colour: 'grey-blue-dark',
+
+            // animation delay
+            delay: 0,
+
+            // target container
+            target: '.loading',
+
+            // appends the loader to the target element as opposed to hiding
+            append: false,
+
+            // small, large or medium
+            size: 'large',
+
+            // dots pulse spinner
+            type: 'spinner'
+
+        });
+    </script>
+</body>
+
+</html>

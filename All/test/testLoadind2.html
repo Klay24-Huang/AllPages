@@ -1,0 +1,28 @@
+<head>
+    <link href="./Rocket-Loader-master/css/loader.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Your content goes here -->
+    <script src="./node_modules/rocket-tools/js/tools.min.js"></script>
+    <script src="./Rocket-Loader-master/js/loader.min.js"></script>
+</body>
+```
+
+## Basic Example
+Below is an example of executing the module complete with required HTML and Javascript.
+```html
+<div id="example"></div>
+<button id="remove">Remove Loader</button>
+
+<!-- Scripts -->
+<script>
+    const loader = Rocket.loader({
+        target: '#example',
+        body: 'Loading Something'
+    });
+
+    Rocket.event.add('#remove', 'click', () => {
+        loader.remove();
+    });
+</script>

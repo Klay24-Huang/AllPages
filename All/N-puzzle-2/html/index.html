@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<div class="container-fluid">
+    <div class="row mt-5"></div>
+    <div class="row">
+        <!-- 左側 原始圖片 -->
+        <div class="col-3">
+            <div style="border: 5px solid #ff00ff;height: 260px; width: 260px;">
+                <img id="answer" src="" alt="" style="height: 250px; width: 250px;">
+            </div>
+        </div>
+
+        <!-- 中間 拼圖 -->
+        <div class="col-6" style="padding: 0px;">
+            <div style="border: 5px solid #ff00ff;height: 510px; width: 510px;" id="puzzle">
+            </div>
+        </div>
+
+        <!-- 右側 控制選項 -->
+        <div class="col-3">
+            <div class="row">
+                <button type="button" class="btn btn-primary mr-1">開始</button>
+                <button type="button" class="btn btn-primary">重新</button>
+            </div>
+            <div class="row mt-2">
+                <button type="button" class="btn btn-primary">顯示定位</button>
+            </div>
+            <div class="row mt-2">
+                <button type="button" class="btn btn-primary mr-1">上一步</button>
+                <button type="button" class="btn btn-primary" id="reduction">復原</button>
+            </div>
+            <div class="row mt-2">
+                難度：
+                <select id="Difficult">
+                    <option value="3">3 x 3</option>
+                    <option value="4">4 x 4</option>
+                    <option value="5">5 x 5</option>
+                </select>
+            </div>
+            <div class="row mt-2">
+                <p>上傳圖片：</p>
+                <input type="file">
+            </div>
+            <button type="button" class="btn btn-primary" id="test"">test</button>
+        </div>
+    </div>
+
+    <!-- 修改或刪除 modal -->
+    <div id=" WinModal" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div>Win!</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+
+    <body>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <!-- puzzle js -->
+        <script src="../js/puzzle.js"></script>
+    </body>
+
+</html>

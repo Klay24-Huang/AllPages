@@ -193,7 +193,7 @@ function ChoseToday() {
 function CalenderTdFunction(obj) {
     todayDate = parseInt($(obj).text());
     RenewDetailDates(todayDate);
-    ChoseToday();
+    // ChoseToday();
     ClearTable();
     LoadData();
 }

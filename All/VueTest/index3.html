@@ -13,8 +13,21 @@
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary">fuck</button>
-    <p class="test" style="display: none;"></p>
+
+    <div id="block">
+        <div v-for="item in items">
+            <div :style="{width: item*10+'px'}" style="height: 30px;background-color: black;"></div>
+            <div :style="{width: item*10+'px'}" style="height: 30px;"></div>
+            <div :style="{width: item*10+'px'}" style="height: 30px;"></div>
+            <div :style="{width: item*10+'px'}" style="height: 30px;"></div>
+            <div :style="{width: item*10+'px'}" style="height: 30px;"></div>
+            <div :style="{width: item*10+'px'}" style="height: 30px;"></div>
+            <div :style="{width: item*10+'px'}" style="height: 30px;"></div>
+            <div :style="{width: item*10+'px'}" style="height: 30px;"></div>
+            <div :style="{width: item*10+'px'}" style="height: 30px;"></div>
+        </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -26,11 +39,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <!-- my js -->
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script>
-    // $('.test').hide();
-    $('.test').show();
+        var dat = [1, 3, 6, 2, 6, 23, 61, 25, 7];
+
+        function Binding() {
+            new Vue({
+                el: '#block',
+                data: {items : dat}
+            });
+        }
+
+        $(document).ready(function () {
+            Binding();
+        });
     </script>
 </body>
 

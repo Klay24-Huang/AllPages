@@ -10,11 +10,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Rocket-Loader-master/css/loader.min.css">
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary">fuck</button>
-    <p class="test" style="display: none;"></p>
+    <p id="loader"></p>
+    <button id="remove">Remove Loader</button>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -26,11 +27,37 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <!-- my js -->
-    <script src="script.js"></script>
+    <script src="./node_modules/rocket-tools/js/tools.min.js"></script>
+    <script src="./Rocket-Loader-master/build/js/loader.js"></script>
     <script>
-    // $('.test').hide();
-    $('.test').show();
+        const myLoader = Rocket.loader({
+
+            // color of the loader
+            // aqua black blue green grey-blue grey-blue-dark orange pink purple red white yellow
+            colour: 'aqua',
+
+            // animation delay
+            delay: 0,
+
+            // target container
+            target: '#loader',
+
+            // appends the loader to the target element as opposed to hiding
+            append: false,
+
+            // small, large or medium
+            size: 'large',
+
+            // dots pulse spinner
+            type: 'spinner',
+            body: '123'
+
+        });
+        Rocket.event.add('#remove', 'click', () => { myLoader.remove(); });
+        // $('.btn').click(function (e) { 
+        //     console.log(111)
+        //     Rocket.event.add('#loader', 'click', () => { myLoader.remove(); });
+        // });
     </script>
 </body>
 

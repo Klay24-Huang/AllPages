@@ -29,11 +29,21 @@
             padding: 0 10px;
         }
 
-        td div:hover {
+        #calenderDisplay div:hover {
             color: #185abc;
             background-color: #d2e3fc;
             border-radius: 50%;
             cursor: pointer;
+        }
+
+        td div {
+            font-size: 18px;
+        }
+
+        .arrow:hover {
+            cursor: pointer;
+            background-color: #ccccff;
+            border-radius: 90%;
         }
 
         th {
@@ -47,8 +57,9 @@
 
         #detail td {
             height: 100vh;
-            width:14.28%;
+            width: 14.28%;
             border: #dadce0 1px solid;
+            padding: 3px;
         }
 
         .choseDetailDate {
@@ -59,9 +70,6 @@
             margin: 0 auto;
         }
 
-        #detail td {
-            padding: 3px;
-        }
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- 統計流量 -->
@@ -84,8 +92,8 @@
                 <thead>
                     <tr>
                         <th colspan="5" class="text-left" id="yearAndMonth"></th>
-                        <th><i class="fas fa-chevron-left ml-auto" id="prevMonth"></i></th>
-                        <th><i class="fas fa-chevron-right ml-2" id="nextMonth"></i></th>
+                        <th class="arrow" data-button="prev"><i class="fas fa-chevron-left ml-auto"></i></th>
+                        <th class="arrow" data-button="next"><i class="fas fa-chevron-right ml-2"></i></th>
                     </tr>
                     <tr>
                         <th scope="col">日</th>
@@ -98,18 +106,26 @@
                     </tr>
                 </thead>
                 <tbody id="calenderDisplay">
+                    <tr>
+                        <td><div>1</div></td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
                 </tbody>
             </table>
-            <pre>
-操作說明:
-點左方小日曆切換時間
-點右方日期下方控革新曾活動
-
-待更新:
-1. 點badge可顯示細節和修正內容
-2. bug.儲存功能怪怪的,有時候會不見
-3. bug badge會隨項目增加越來越多
-            </pre>
         </div>
 
         <!-- 右方細節 -->
@@ -117,33 +133,32 @@
             <table class="table table-borderless mt-3" id="detail">
                 <thead>
                     <tr>
-                        <th scope="col">周日<div class="DetailDates">1</div>
+                        <th scope="col">周日<div class="DetailDates" data-order="0">1</div>
                         </th>
-                        <th scope="col">周一<div class="DetailDates">2</div>
+                        <th scope="col">周一<div class="DetailDates" data-order="1">2</div>
                         </th>
-                        <th scope="col">周二<div class="DetailDates">3</div>
+                        <th scope="col">周二<div class="DetailDates" data-order="2">3</div>
                         </th>
-                        <th scope="col">周三<div class="DetailDates">4</div>
+                        <th scope="col">周三<div class="DetailDates" data-order="3">4</div>
                         </th>
-                        <th scope="col">周四<div class="DetailDates">5</div>
+                        <th scope="col">周四<div class="DetailDates" data-order="4">5</div>
                         </th>
-                        <th scope="col">周五<div class="DetailDates">6</div>
+                        <th scope="col">周五<div class="DetailDates" data-order="5">6</div>
                         </th>
-                        <th scope="col">周六<div class="DetailDates">7</div>
+                        <th scope="col">周六<div class="DetailDates" data-order="6">7</div>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr id="detail">
-                        <td class="detail" style="border-radius: 5px 0 0 5px;max-width:100px;width:100px;"></td>
-                        <td class="detail" style="border-left-style:none;max-width:100px;">
-                            <!-- <span class="badge badge-primary w-100 text-left">test <br>123 </span> -->
+                    <tr>
+                        <td data-order="0" class="detail" style="border-radius: 5px 0 0 5px;max-width:100px;width:100px;"></td>
+                        <td data-order="1" class="detail" style="border-left-style:none;max-width:100px;"></td>
+                        <td data-order="2" class="detail" style="border-left-style:none;max-width:100px;"></td>
+                        <td data-order="3" class="detail" style="border-left-style:none;max-width:100px;"></td>
+                        <td data-order="4" class="detail" style="border-left-style:none;max-width:100px;"></td>
+                        <td data-order="5" class="detail" style="border-left-style:none;max-width:100px;"></td>
+                        <td data-order="6" class="detail" style="border-radius: 0 5px 5px 0;border-left-style:none;max-width:100px">
                         </td>
-                        <td class="detail" style="border-left-style:none;max-width:100px;"></td>
-                        <td class="detail" style="border-left-style:none;max-width:100px;"></td>
-                        <td class="detail" style="border-left-style:none;max-width:100px;"></td>
-                        <td class="detail" style="border-left-style:none;max-width:100px;"></td>
-                        <td class="detail" style="border-radius: 0 5px 5px 0;border-left-style:none;max-width:100px"></td>
                     </tr>
                 </tbody>
             </table>
@@ -161,12 +176,13 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <input type="text" class="form-control" id="title" placeholder="新增標題">
+                <input type="text" class="form-control" id="title" placeholder="新增活動標題">
                 <input type="datetime-local" class="form-control mt-3" id="time" value="">
-                <input type="text" class="form-control mt-3" id="description" placeholder="新增說明">
+                <input type="text" class="form-control mt-3" id="description" placeholder="新增活動說明">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="btn-add" data-dismiss="modal">新增</button>
+                <button type="button" class="btn btn-primary" id="btn-modified" data-dismiss="modal">修改</button>
                 <button type="button" class="btn btn-danger" id="btn-delete" data-dismiss="modal">刪除</button>
 
             </div>
@@ -191,12 +207,11 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/72b9c7cd10.js" crossorigin="anonymous"></script>
     <!-- my js -->
-    <!-- 參數 -->
-    <script src="../JS/parameters.js"></script>
     <!-- 左方日曆 -->
     <script src="../JS/calender.js"></script>
     <!-- 右方細節 -->
     <script src="../JS/detailTable.js"></script>
+    <script src=""></script>
     <div class="test"></div>
 </body>
 

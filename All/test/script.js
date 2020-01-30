@@ -1,12 +1,14 @@
+var text = '$280.00';
+var text2= 'aba';
 $(function () {
-    // $('test').text(arr.constructor);
-    $('test').text('123');
-    console.log(arr.constructor);
+    $('Button').click(function (e) { 
+         text2.replace('b','fuck');
+         console.log(text2);
+    });
+    text.replace('0','a');
+    console.log(text);
 });
 
-var arr = [
-    [1],
-    [2],
-    [3]
-]
+
+
 

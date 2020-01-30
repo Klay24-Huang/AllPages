@@ -1,0 +1,48 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"
+    integrity="sha256-chlNFSVx3TdcQ2Xlw7SvnbLAavAQLO0Y/LBiWX04viY=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha256-CjSoeELFOcH0/uxWu6mC/Vlrc1AARqbm/jiiImDGV3s=" crossorigin="anonymous"></script>
+<script>
+    var json = { "title": "標題", "isVIP" : true  };
+
+    function Binding() {
+        new Vue(
+            {
+                el: '#block1',
+                data: json,
+                methods: {
+                    VIPFalse: function(){
+                        json.isVIP = false;
+                    },
+                    VIPTrue: function(){
+                        json.isVIP = true;
+                    }   
+                },
+            }
+        );
+    }
+
+    $(document).ready(function () {
+        Binding();
+    });
+</script>
+
+<body>
+    <div id="block1">
+        <label>
+            優質會員: {{isVIP}}
+            <span v-if="isVIP" v-on:click="VIPFalse">❤️</span>
+            <span v-else v-on:click=" VIPTrue">💔</span>
+        </label>
+        <br/>
+        <label>標題: {{title}}</label>
+    </div>
+</body>
+
+</html>

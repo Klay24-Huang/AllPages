@@ -10,13 +10,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<body>
-    <button type="button" class="btn btn-primary">fuck</button>
-    <p class="test" style="display: none;"></p>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
@@ -26,12 +19,45 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <!-- my js -->
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script>
-    // $('.test').hide();
-    $('.test').show();
-    </script>
+        var vm;
+        $(function () {
+            Binding()
+        });
+
+        Vue.directive('bg', {
+            bind: function (el, binding) {
+                el.style.backgroundColor = binding.value;
+            },
+            update: function (el, binding) {
+                el.style.backgroundColor = binding.value;
+            },
+        })
+
+        function Binding() {
+            vm = new Vue({
+                el: '#Target',
+                data: {
+                    color: '#ffe6e6'
+                }
+            })
+        }
+    </script> 
+</head>
+
+<body>
+    <div class="container mt-5" id="Target">
+        <div class="row">
+            <div class="col-12" >色碼:</div>
+            <div class="col-12"><input type="text" v-model="color"></div>
+            <div class="col-12">顏色:</div>
+            <div class="col-12"><input type="text" v-bg="color"></div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 </body>
 
 </html>
