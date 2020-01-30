@@ -77,9 +77,9 @@ function OrderDetailData() {
     detailData = detailData.sort(function (a, b) {
         return a.time > b.time ? 1 : -1;
     })
-    for (let index = 0; index < detailData.length; index++) {
-        detailData[index].index = index
-    }
+    // for (let index = 0; index < detailData.length; index++) {
+    //     detailData[index].index = index
+    // }
     console.log('detailData is ', detailData)
 }
 
@@ -99,13 +99,18 @@ function CreateBadge() {
             }
         }
         // 產生徽章
-        for (let index = 0; index < temp.length; index++) {
-            let hour = new Date(temp[index].time).getHours()
-            let minute = new Date(temp[index].time).getMinutes()
-            let badge = `<span class="badge badge-primary w-100 text-left mt-1" data-index=${temp[index].index}><div>${temp[index].title}</div><div>${hour}點${minute}分</div></span>`;
+        for (let i = 0; i < temp.length; i++) {
+            let hour = new Date(temp[i].time).getHours()
+            let minute = new Date(temp[i].time).getMinutes()
+            let dataIndex = Index(temp[i])
+            let badge = `<span class="badge badge-primary w-100 text-left mt-1" data-index=${dataIndex}><div>${temp[i].title}</div><div>${hour}點${minute}分</div></span>`;
             $(element).append(badge);
         }
     });
+}
+
+function Index(obj) {
+    return detailData.indexOf(obj) 
 }
 
 //顯示活動在畫面上
@@ -167,13 +172,6 @@ function BadgeClick(obj) {
     $('#ModifiedModal').modal()
 }
 
-// function FindOfArray(arr, property, condition) {
-//     let result = $.map(arr, function (item, index) {
-//         return item.property;
-//     }).indexOf(condition)
-//     return result
-// }
-
 //在所有data中尋找要修改或刪除的資料
 function FindOfData(obj) {
     let dataIndex = data.indexOf(obj)
@@ -232,7 +230,7 @@ function Upgrade() {
 
 function Delete() {
     let dataIndex = FindOfData(detailData[index])
-    if (dataIndex =-1) {
+    if (dataIndex ==-1) {
         return
     }
     data.splice(dataIndex, 1)
@@ -246,7 +244,4 @@ function NewMemo() {
     ShowEvent()
 }
 
-$(function () {
-    $('#btn-add').click(NewMemo);
-    data = Read()
-});
+$('#btn-add').click(NewMemo);
