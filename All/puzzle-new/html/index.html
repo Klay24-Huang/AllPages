@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #puzzle {
+            border: #4d79ff 5px solid;
+            width: 510px;
+            height: 510px;
+            position: relative;
+        }
+
+        #puzzle div {
+            overflow: hidden;
+            box-shadow: 0px 0px 0px 1px #ffccff;
+            position: absolute;
+        }
+
+        .smallPic {
+            width: 250px;
+            height: 250px;
+            border: #4d79ff 5px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 mt-5 ml-2">
+                <img class="smallPic" src="pic.jpg" alt="">
+            </div>
+            <div id="puzzle" class="mt-3">
+
+            </div>
+            <div class="col-3 ml-5 mt-5">
+                <div class="row">
+                    <label for="sel1">拼圖大小：</label>
+                    <select class="form-control" id="Size">
+                        <option>3x3</option>
+                        <option>4x4</option>
+                        <option>5x5</option>
+                    </select>
+                </div>
+                <div class="row mt-1">
+                    <label for="usr">打亂步數:</label>
+                    <input type="text" class="form-control" id="Random" value="20">
+                </div>
+                <div class="row mt-2">
+                    <label for="usr">更換圖片:</label>
+                    <input type="file" class="form-control-file border" id="Pic">
+                </div>
+                <div class="row">
+                    <button id="Start" type="button" class="btn btn-primary mt-3">開始</button>
+                    <button id="Reset" type="button" class="btn btn-primary mt-3 ml-2">重來</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="../js/puzzle.js"></script>
+</body>
+
+</html>
